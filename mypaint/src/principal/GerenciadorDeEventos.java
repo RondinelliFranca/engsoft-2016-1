@@ -2,6 +2,7 @@ package principal;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import figuras.Figura;
 
@@ -21,8 +22,9 @@ public class GerenciadorDeEventos extends MouseAdapter {
 		this.ferramenta = ferramenta;
 	}
 
-	public void limpaAreaDeDesenho() {
+	public void limpaAreaDeDesenho() throws IOException {
 		// TODO: limpar a área de desenho e chamar repaint
+		Runtime.getRuntime().exec("cls");
 	}
 	
 	@Override

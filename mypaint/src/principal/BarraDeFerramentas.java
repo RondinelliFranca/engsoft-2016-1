@@ -2,6 +2,7 @@ package principal;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -32,7 +33,12 @@ public class BarraDeFerramentas extends JToolBar {
 		JButton botaoLimpar = new JButton("Limpar");
 		botaoLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ge.limpaAreaDeDesenho();
+				try {
+					ge.limpaAreaDeDesenho();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		this.add(botaoLimpar);
